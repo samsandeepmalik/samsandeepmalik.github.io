@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sandeep Malik — AI Engineer & Data Architect specializing in LLM, RAG, and Vector Databases. Transforming data into intelligent solutions.">
+<title>Sandeep Malik — AI Engineer & Data Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e14;
+    --bg-alt:#0f141d;
+    --card:#131a26;
+    --card-hover:#18202e;
+    --border:#1f2937;
+    --text:#e6edf3;
+    --muted:#8b96a5;
+    --accent:#22d3ee;
+    --accent-2:#818cf8;
+    --gradient:linear-gradient(135deg,#22d3ee 0%,#818cf8 100%);
+    --mono:'JetBrains Mono',monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+  ::selection{background:rgba(34,211,238,.3)}
+
+  /* ---------- Nav ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,14,20,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--mono);font-weight:600;font-size:1rem;color:var(--text);text-decoration:none}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:28px;list-style:none}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--accent)}
+  .menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+  /* ---------- Hero ---------- */
+  .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:120px 24px 60px}
+  .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.08),transparent 70%);pointer-events:none}
+  .hero::after{content:'';position:absolute;bottom:-150px;left:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(129,140,248,.08),transparent 70%);pointer-events:none}
+  .hero-inner{max-width:1100px;margin:0 auto;width:100%}
+  .eyebrow{font-family:var(--mono);color:var(--accent);font-size:.95rem;margin-bottom:16px}
+  h1{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;line-height:1.1;letter-spacing:-.02em}
+  .hero h2{font-size:clamp(1.3rem,3.5vw,2rem);font-weight:700;color:var(--muted);margin-top:8px;line-height:1.25}
+  .hero h2 .grad{background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .hero p.lead{max-width:620px;color:var(--muted);margin-top:24px;font-size:1.05rem}
+  .hero-cta{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .2s,box-shadow .2s}
+  .btn-primary{background:var(--gradient);color:#0a0e14}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,211,238,.25)}
+  .btn-ghost{border:1px solid var(--border);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .hero-stats{display:flex;gap:48px;margin-top:56px;flex-wrap:wrap}
+  .stat .num{font-size:2rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .stat .lbl{color:var(--muted);font-size:.85rem;margin-top:2px}
+
+  /* ---------- Sections ---------- */
+  section{padding:96px 24px}
+  section:nth-of-type(even){background:var(--bg-alt)}
+  .section-inner{max-width:1100px;margin:0 auto}
+  .section-tag{font-family:var(--mono);color:var(--accent);font-size:.85rem;display:block;margin-bottom:10px}
+  .section-title{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;letter-spacing:-.02em;margin-bottom:40px}
+
+  /* ---------- About ---------- */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+  .about-text p{color:var(--muted);margin-bottom:18px;font-size:1.02rem}
+  .about-text strong{color:var(--text)}
+  .skills-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px}
+  .skills-card h3{font-size:1rem;margin-bottom:14px;color:var(--text)}
+  .skill-group{margin-bottom:22px}
+  .skill-group:last-child{margin-bottom:0}
+  .skill-group .label{font-family:var(--mono);font-size:.78rem;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;display:block}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:.8rem;padding:5px 12px;border-radius:999px;background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.18);color:#a5e8f5}
+
+  /* ---------- Work ---------- */
+  .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+  .work-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:transform .25s,border-color .25s,background .25s;display:flex;flex-direction:column}
+  .work-card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.4);background:var(--card-hover)}
+  .work-card .icon{font-size:1.6rem;margin-bottom:14px}
+  .work-card h3{font-size:1.1rem;margin-bottom:10px}
+  .work-card p{color:var(--muted);font-size:.92rem;flex:1}
+  .work-card .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
+  .tag{font-family:var(--mono);font-size:.72rem;color:var(--accent-2);background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.2);padding:3px 9px;border-radius:5px}
+  .gh-link{margin-top:14px;font-size:.85rem;color:var(--accent);text-decoration:none;font-weight:600}
+  .gh-link:hover{text-decoration:underline}
+  .work-foot{margin-top:36px;text-align:center;color:var(--muted);font-size:.95rem}
+  .work-foot a{color:var(--accent);text-decoration:none;font-weight:600}
+
+  /* ---------- Experience timeline ---------- */
+  .timeline{position:relative;padding-left:32px}
+  .timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
+  .t-item{position:relative;margin-bottom:44px}
+  .t-item:last-child{margin-bottom:0}
+  .t-item::before{content:'';position:absolute;left:-32px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+  .t-item .period{font-family:var(--mono);font-size:.8rem;color:var(--accent);margin-bottom:4px}
+  .t-item h3{font-size:1.15rem}
+  .t-item .org{color:var(--accent-2);font-weight:600;font-size:.95rem;margin-bottom:8px}
+  .t-item p{color:var(--muted);font-size:.93rem;max-width:760px}
+  .t-item ul{margin:10px 0 0 18px;color:var(--muted);font-size:.93rem;max-width:760px}
+  .t-item ul li{margin-bottom:6px}
+
+  /* ---------- Education ---------- */
+  .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .edu-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px}
+  .edu-card .icon{font-size:1.6rem;margin-bottom:12px}
+  .edu-card h3{font-size:1.05rem;margin-bottom:6px}
+  .edu-card p{color:var(--muted);font-size:.9rem}
+
+  /* ---------- Contact / footer ---------- */
+  .contact{text-align:center}
+  .contact p{color:var(--muted);max-width:540px;margin:0 auto 32px}
+  footer{border-top:1px solid var(--border);padding:28px 24px;text-align:center;color:var(--muted);font-size:.85rem}
+  footer a{color:var(--accent);text-decoration:none}
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:820px){
+    .about-grid{grid-template-columns:1fr}
+    .nav-links{position:fixed;top:64px;right:0;background:var(--bg-alt);border:1px solid var(--border);border-radius:0 0 0 12px;flex-direction:column;gap:0;padding:8px 0;display:none;min-width:220px}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 24px;display:block}
+    .menu-btn{display:block}
+    .hero-stats{gap:28px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#top">sandeep<span>.malik</span></a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">My Work</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="eyebrow">Hi, my name is</div>
+    <h1>Sandeep Malik.</h1>
+    <h2>I build <span class="grad">intelligent data &amp; AI systems</span> at scale.</h2>
+    <p class="lead">AI Engineer &amp; Data Architect specializing in LLMs, Retrieval-Augmented Generation, and vector databases — currently a Principal Engineer at Autodesk, based in Greater Montreal, Canada.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#work">View My Work</a>
+      <a class="btn btn-ghost" href="#contact">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">11+</div><div class="lbl">Years of Experience</div></div>
+      <div class="stat"><div class="num">8+</div><div class="lbl">Companies, 3 Continents</div></div>
+      <div class="stat"><div class="num">LLM · RAG</div><div class="lbl">GenAI in Production</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="section-inner">
+    <span class="section-tag">01. about</span>
+    <h2 class="section-title">Transforming Data into Intelligent Solutions</h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm an <strong>AI Engineer and Data Architect</strong> with over a decade of experience designing data platforms and, more recently, putting <strong>generative AI into production</strong> — GPT-powered products, RAG pipelines, semantic index layers, and vector-database knowledge bases.</p>
+        <p>My career spans the full arc of modern data engineering: from building enterprise Java systems in India and Dubai, through big-data platforms at <strong>CGI, Ericsson, and Intact</strong>, to advising customers as a <strong>Solutions Architect at Cloudera</strong>, leading the search product team at <strong>Sitecore</strong>, and architecting AI-driven data platforms at <strong>Databook</strong>. Today I'm a <strong>Principal Engineer at Autodesk</strong>.</p>
+        <p>I care about systems that are reliable as well as smart — data quality, observability, and LLM-Ops are as much a part of my toolkit as embeddings and prompts. I've also led and mentored teams of data engineers, because great platforms are built by great teams.</p>
+      </div>
+      <aside class="skills-card reveal">
+        <h3>Core Toolkit</h3>
+        <div class="skill-group">
+          <span class="label">AI / GenAI</span>
+          <div class="chips"><span class="chip">LLMs</span><span class="chip">RAG Pipelines</span><span class="chip">Vector DBs · Pinecone</span><span class="chip">Semantic Search</span><span class="chip">LLM-Ops</span><span class="chip">Vectorization</span></div>
+        </div>
+        <div class="skill-group">
+          <span class="label">Data Engineering</span>
+          <div class="chips"><span class="chip">Data Lakes &amp; Warehouses</span><span class="chip">Snowflake</span><span class="chip">Batch &amp; Streaming</span><span class="chip">Data Quality</span><span class="chip">Data Observability</span><span class="chip">Cloudera CDP</span></div>
+        </div>
+        <div class="skill-group">
+          <span class="label">Languages &amp; Cloud</span>
+          <div class="chips"><span class="chip">Python</span><span class="chip">Scala</span><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">AWS</span><span class="chip">Kubernetes</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="section-inner">
+    <span class="section-tag">02. my work</span>
+    <h2 class="section-title">Selected Projects &amp; Highlights</h2>
+    <div class="work-grid">
+      <div class="work-card reveal">
+        <div class="icon">🤖</div>
+        <h3>GPT Solution for Strategic Sales</h3>
+        <p>Spearheaded a generative-AI product for strategic sales intelligence, enhancing customer engagement and sales strategy with LLM-driven insights.</p>
+        <div class="tags"><span class="tag">GPT</span><span class="tag">GenAI</span><span class="tag">Product</span></div>
+      </div>
+      <div class="work-card reveal">
+        <div class="icon">🔎</div>
+        <h3>RAG Pipelines &amp; Semantic Index</h3>
+        <p>Designed Retrieval-Augmented Generation pipelines and architected a semantic index layer, dramatically improving AI-driven information retrieval and analysis.</p>
+        <div class="tags"><span class="tag">RAG</span><span class="tag">Embeddings</span><span class="tag">Semantic Search</span></div>
+      </div>
+      <div class="work-card reveal">
+        <div class="icon">🧠</div>
+        <h3>Vector Knowledge Base &amp; LLM-Ops</h3>
+        <p>Managed a Pinecone vector database as the knowledge base for AI applications and built LLM-Ops tooling to streamline model deployment and monitoring.</p>
+        <div class="tags"><span class="tag">Pinecone</span><span class="tag">LLM-Ops</span><span class="tag">MLOps</span></div>
+      </div>
+      <div class="work-card reveal">
+        <div class="icon">🛒</div>
+        <h3>AI-Backed Search &amp; Personalization</h3>
+        <p>Led Sitecore's core Search product team — enhancing AI search and personalization for global e-commerce customers and lifting conversion rates.</p>
+        <div class="tags"><span class="tag">Search</span><span class="tag">Personalization</span><span class="tag">Snowflake</span></div>
+      </div>
+      <div class="work-card reveal">
+        <div class="icon">🏗️</div>
+        <h3>Enterprise Data Platforms</h3>
+        <p>Architected scalable Data Lake and Warehouse solutions for a global retailer, cutting storage costs, and led cloud migrations of historical data to AWS at Cloudera.</p>
+        <div class="tags"><span class="tag">Data Lake</span><span class="tag">AWS</span><span class="tag">Cloudera CDP</span></div>
+      </div>
+      <div class="work-card reveal">
+        <div class="icon">⚙️</div>
+        <h3>EN-RuleEngine <span style="font-size:.75rem;color:var(--muted)">(open source)</span></h3>
+        <p>A Scala rule engine that validates live streaming and batch data against rules defined in YAML — data quality enforcement for pipelines.</p>
+        <div class="tags"><span class="tag">Scala</span><span class="tag">Streaming</span><span class="tag">Data Quality</span></div>
+        <a class="gh-link" href="https://github.com/samsandeepmalik/EN-RuleEngine" target="_blank" rel="noopener">View on GitHub →</a>
+      </div>
+    </div>
+    <p class="work-foot">More experiments and tooling on <a href="https://github.com/samsandeepmalik" target="_blank" rel="noopener">github.com/samsandeepmalik</a></p>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-inner">
+    <span class="section-tag">03. experience</span>
+    <h2 class="section-title">Where I've Worked</h2>
+    <div class="timeline">
+      <div class="t-item reveal">
+        <div class="period">Jul 2025 — Present · Montreal, Canada</div>
+        <h3>Principal Engineer</h3>
+        <div class="org">Autodesk</div>
+        <p>Driving engineering excellence across data and AI initiatives as a principal individual contributor.</p>
+      </div>
+      <div class="t-item reveal">
+        <div class="period">Dec 2022 — Jul 2025 · Montreal, Canada</div>
+        <h3>Data Architect / Staff Engineer</h3>
+        <div class="org">Databook</div>
+        <ul>
+          <li>Spearheaded a GPT solution for strategic sales products and designed production RAG pipelines.</li>
+          <li>Architected a semantic index layer and managed Pinecone as the AI knowledge base.</li>
+          <li>Built LLM-Ops, data-quality checks, and observability; led a team of data engineers on a new data platform.</li>
+        </ul>
+      </div>
+      <div class="t-item reveal">
+        <div class="period">Mar 2022 — Dec 2022 · Montreal, Canada</div>
+        <h3>Principal Data Engineer</h3>
+        <div class="org">Sitecore</div>
+        <ul>
+          <li>Led the core Search product team — AI-backed search and personalization for e-commerce.</li>
+          <li>Architected Data Lake/Warehouse for a global retailer; built Snowflake marts and automated monitoring.</li>
+        </ul>
+      </div>
+      <div class="t-item reveal">
+        <div class="period">May 2021 — Mar 2022 · Montreal, Canada</div>
+        <h3>Solutions Architect</h3>
+        <div class="org">Cloudera</div>
+        <ul>
+          <li>Professional Services expert guiding customers onto Cloudera Data Platform across public, private, and hybrid clouds.</li>
+          <li>Designed on-prem → AWS migration strategies, ran POCs, and trained customer engineering teams.</li>
+        </ul>
+      </div>
+      <div class="t-item reveal">
+        <div class="period">Apr 2020 — May 2021 · Toronto, Canada</div>
+        <h3>Senior Data Engineer</h3>
+        <div class="org">Intact</div>
+        <p>Built and optimized large-scale batch data pipelines for one of Canada's largest insurers.</p>
+      </div>
+      <div class="t-item reveal">
+        <div class="period">Sep 2019 — Apr 2020 · Montreal, Canada</div>
+        <h3>Senior Data Engineer</h3>
+        <div class="org">Ericsson</div>
+        <p>Data engineering for telecom-scale platforms and analytics workloads.</p>
+      </div>
+      <div class="t-item reveal">
+        <div class="period">Jul 2018 — Aug 2019 · Montreal, Canada</div>
+        <h3>Senior Data Engineer</h3>
+        <div class="org">CGI</div>
+        <p>Delivered big-data engineering solutions for enterprise clients.</p>
+      </div>
+      <div class="t-item reveal">
+        <div class="period">2014 — 2018 · India &amp; Dubai</div>
+        <h3>Software / Data Engineer</h3>
+        <div class="org">Synechron · Emirates · MothersonSumi Infotech (MIND)</div>
+        <p>Early career building enterprise systems — including onsite work for Emirates Airline in Dubai and core platforms (Master Data Management, KPI systems) with Java, Spring, and AngularJS.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-inner">
+    <span class="section-tag">04. education &amp; certifications</span>
+    <h2 class="section-title">Education &amp; Continuous Learning</h2>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="icon">🎓</div>
+        <h3>Manav Bharti University, Solan</h3>
+        <p>Engineering — foundation in computer science and software engineering.</p>
+      </div>
+      <div class="edu-card reveal">
+        <div class="icon">📜</div>
+        <h3>Big Data &amp; Cloud Training</h3>
+        <p>Hands-on preparation across CCA-175 (Spark &amp; Hadoop), Certified Kubernetes Application Developer (CKAD), and AWS serverless workshops.</p>
+      </div>
+      <div class="edu-card reveal">
+        <div class="icon">🚀</div>
+        <h3>Always Learning</h3>
+        <p>Currently deep in the GenAI stack — LLM orchestration, agentic patterns, retrieval architectures, and evaluation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="section-inner">
+    <span class="section-tag">05. contact</span>
+    <h2 class="section-title">Let's Build Something Intelligent</h2>
+    <p class="reveal">I'm always open to conversations about AI engineering, data architecture, and interesting problems. The fastest way to reach me:</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a class="btn btn-primary" href="mailto:samsandeepmalik@gmail.com">Say Hello</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/sandeep-malik-48a12a70/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/samsandeepmalik" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="yr"></span> Sandeep Malik · Built with care, hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  // close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open')));
+  // reveal on scroll
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
