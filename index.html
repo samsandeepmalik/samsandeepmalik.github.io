@@ -353,10 +353,10 @@
   document.getElementById('yr').textContent = new Date().getFullYear();
   // close mobile menu on link click
   document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open')));
-  // reveal on scroll
+  // reveal on scroll (also reveals elements above the viewport, e.g. after deep-linking to #contact)
   const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
-  },{threshold:.12});
+    entries.forEach(e=>{ if(e.isIntersecting || e.boundingClientRect.top < 0){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  },{threshold:.05,rootMargin:'0px 0px -20px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
