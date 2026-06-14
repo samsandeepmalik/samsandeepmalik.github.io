@@ -3,168 +3,183 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Sandeep Malik — AI Engineer & Data Architect specializing in LLM, RAG, and Vector Databases. Transforming data into intelligent solutions.">
+<meta name="description" content="Sandeep Malik — AI Engineer & Data Architect specializing in LLMs, RAG, and vector databases. Transforming data into intelligent solutions.">
 <meta property="og:title" content="Sandeep Malik — AI Engineer & Data Architect">
 <meta property="og:description" content="AI Engineer & Data Architect — LLMs, RAG, vector databases. Principal Engineer at Autodesk.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://sandeep-malik.com">
 <title>Sandeep Malik — AI Engineer & Data Architect</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a0e14'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='54' font-weight='700' text-anchor='middle' fill='%2322d3ee'%3ESM%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230b0d10'/%3E%3Ctext x='50' y='69' font-family='monospace' font-size='52' font-weight='700' text-anchor='middle' fill='%2340dccb'%3ESM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0e14;
-    --bg-alt:#0f141d;
-    --card:#131a26;
-    --card-hover:#18202e;
-    --border:#1f2937;
-    --text:#e6edf3;
-    --muted:#8b96a5;
-    --accent:#22d3ee;
-    --accent-2:#818cf8;
-    --gradient:linear-gradient(135deg,#22d3ee 0%,#818cf8 100%);
-    --mono:'JetBrains Mono',monospace;
-    --maxw:1140px;
+    --bg:#0b0d10;
+    --bg-alt:#0e1014;
+    --panel:#13161c;
+    --panel-2:#171b22;
+    --border:#222831;
+    --border-soft:#1a1f27;
+    --text:#e7eaef;
+    --muted:#8b94a1;
+    --dim:#5c6573;
+    --accent:#40dccb;
+    --accent-soft:rgba(64,220,203,.10);
+    --accent-line:rgba(64,220,203,.26);
+    --amber:#e7b75a;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --sans:'Inter',system-ui,sans-serif;
+    --maxw:980px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-  ::selection{background:rgba(34,211,238,.3)}
-  a{color:inherit}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(900px 500px at 78% -8%,rgba(64,220,203,.06),transparent 60%),radial-gradient(700px 500px at -5% 12%,rgba(129,140,248,.05),transparent 55%)}
+  ::selection{background:rgba(64,220,203,.28);color:#fff}
+  a{color:inherit;text-decoration:none}
 
   /* ---------- Nav ---------- */
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,14,20,.8);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
-  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;height:66px;display:flex;align-items:center;justify-content:space-between}
-  .logo{font-family:var(--mono);font-weight:600;font-size:1.02rem;text-decoration:none;letter-spacing:-.01em}
-  .logo span{color:var(--accent)}
-  .nav-links{display:flex;gap:30px;list-style:none}
-  .nav-links a{color:var(--muted);text-decoration:none;font-size:.9rem;font-weight:500;transition:color .2s}
-  .nav-links a:hover{color:var(--accent)}
-  .menu-btn{display:none;background:none;border:none;color:var(--text);font-size:1.5rem;cursor:pointer}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,13,16,.78);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-soft)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 26px;height:62px;display:flex;align-items:center;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--mono);font-weight:700;font-size:.98rem;letter-spacing:-.01em}
+  .brand .mono-av{width:30px;height:30px;border-radius:8px;flex:none}
+  .nav-links{display:flex;align-items:center;gap:2px;list-style:none}
+  .nav-links a{font-family:var(--mono);color:var(--muted);font-size:.82rem;padding:7px 13px;border-radius:7px;transition:color .2s,background .2s}
+  .nav-links a:hover{color:var(--accent);background:var(--accent-soft)}
+  .nav-links a .hash{color:var(--dim)}
+  .menu-btn{display:none;background:none;border:1px solid var(--border);color:var(--text);font-size:1.1rem;cursor:pointer;border-radius:8px;width:38px;height:38px}
 
   /* ---------- Layout ---------- */
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
-  section{padding:108px 0}
-  section:nth-of-type(even){background:var(--bg-alt)}
-  .section-tag{font-family:var(--mono);color:var(--accent);font-size:.82rem;display:block;margin-bottom:12px;letter-spacing:.02em}
-  .section-title{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;letter-spacing:-.025em;margin-bottom:46px;line-height:1.15}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px;position:relative;z-index:1}
+  section{padding:88px 0;position:relative;z-index:1}
+  .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:34px}
+  .sec-head .idx{font-family:var(--mono);color:var(--accent);font-size:.86rem}
+  .sec-head h2{font-family:var(--mono);font-size:clamp(1.35rem,3.2vw,1.85rem);font-weight:700;letter-spacing:-.02em;white-space:nowrap}
+  .sec-head .rule{height:1px;background:var(--border);flex:1}
 
   /* ---------- Hero ---------- */
-  .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:120px 0 70px;overflow:hidden}
-  .hero::before{content:'';position:absolute;top:-180px;right:-120px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(34,211,238,.10),transparent 68%);pointer-events:none}
-  .hero::after{content:'';position:absolute;bottom:-160px;left:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(129,140,248,.10),transparent 68%);pointer-events:none}
-  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;width:100%;position:relative;z-index:2}
-  .eyebrow{font-family:var(--mono);color:var(--accent);font-size:.95rem;margin-bottom:18px}
-  h1{font-size:clamp(2.6rem,6vw,4.2rem);font-weight:900;line-height:1.04;letter-spacing:-.035em}
-  .hero h2{font-size:clamp(1.25rem,3vw,1.9rem);font-weight:700;color:var(--muted);margin-top:10px;line-height:1.25;letter-spacing:-.01em}
-  .hero h2 .grad{background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .hero p.lead{max-width:540px;color:var(--muted);margin-top:24px;font-size:1.06rem}
-  .hero-cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:9px;font-weight:600;font-size:.95rem;text-decoration:none;transition:transform .2s,box-shadow .2s,border-color .2s,color .2s}
-  .btn-primary{background:var(--gradient);color:#0a0e14}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(34,211,238,.28)}
+  .hero{min-height:100vh;display:flex;align-items:center;padding:110px 0 70px}
+  .hero-top{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+  .avatar{width:104px;height:104px;border-radius:18px;flex:none;position:relative}
+  .avatar svg{display:block;width:100%;height:100%}
+  .prompt{font-family:var(--mono);color:var(--accent);font-size:.95rem;margin-bottom:6px}
+  .prompt .cursor{display:inline-block;width:9px;height:1.05em;background:var(--accent);margin-left:3px;transform:translateY(2px);animation:blink 1.1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .hero h1{font-family:var(--mono);font-size:clamp(2.3rem,6.2vw,3.7rem);font-weight:700;line-height:1.04;letter-spacing:-.04em}
+  .hero h1 .dot{color:var(--accent)}
+  .role{margin-top:14px;font-family:var(--mono);font-size:clamp(.92rem,2vw,1.08rem);color:var(--muted);letter-spacing:-.01em}
+  .role b{color:var(--text);font-weight:600}
+  .role .sep{color:var(--accent);padding:0 6px}
+  .socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+  .social{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.82rem;color:var(--muted);border:1px solid var(--border);background:var(--panel);padding:8px 13px;border-radius:9px;transition:.2s}
+  .social:hover{color:var(--accent);border-color:var(--accent-line);background:var(--panel-2);transform:translateY(-2px)}
+  .social svg{width:15px;height:15px;fill:currentColor}
+  .lead{max-width:660px;color:var(--muted);margin-top:30px;font-size:1.04rem}
+  .lead strong{color:var(--text);font-weight:600}
+  .hero-cta{margin-top:30px;display:flex;gap:13px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);padding:11px 20px;border-radius:9px;font-weight:600;font-size:.86rem;transition:transform .2s,box-shadow .2s,border-color .2s,color .2s}
+  .btn-primary{background:var(--accent);color:#06201d}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(64,220,203,.26)}
   .btn-ghost{border:1px solid var(--border);color:var(--text)}
-  .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-  .hero-stats{display:flex;gap:44px;margin-top:54px;flex-wrap:wrap}
-  .stat .num{font-size:1.85rem;font-weight:800;background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .stat .lbl{color:var(--muted);font-size:.82rem;margin-top:2px}
-
-  /* ---------- Hero code card ---------- */
-  .code-card{background:linear-gradient(160deg,#121a27,#0e1420);border:1px solid var(--border);border-radius:16px;box-shadow:0 30px 60px -25px rgba(0,0,0,.7);overflow:hidden;position:relative}
-  .code-card .bar{display:flex;align-items:center;gap:8px;padding:13px 16px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015)}
-  .dot{width:11px;height:11px;border-radius:50%}
-  .dot.r{background:#ff5f57}.dot.y{background:#febc2e}.dot.g{background:#28c840}
-  .code-card .fname{margin-left:8px;font-family:var(--mono);font-size:.76rem;color:var(--muted)}
-  .code-card pre{margin:0;padding:20px 20px 22px;font-family:var(--mono);font-size:.82rem;line-height:1.85;overflow-x:auto}
-  .c-key{color:#c084fc}.c-fn{color:#22d3ee}.c-str{color:#7ee787}.c-com{color:#5b6573}.c-var{color:#e6edf3}.c-num{color:#f0883e}
-  .float-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;justify-content:flex-end}
-  .fb{font-family:var(--mono);font-size:.72rem;color:#a5e8f5;background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.2);padding:5px 11px;border-radius:7px}
+  .btn-ghost:hover{border-color:var(--accent-line);color:var(--accent);transform:translateY(-2px)}
+  .hero-stats{display:flex;gap:40px;margin-top:46px;flex-wrap:wrap}
+  .stat .num{font-family:var(--mono);font-size:1.6rem;font-weight:700;color:var(--accent)}
+  .stat .lbl{color:var(--muted);font-size:.8rem;margin-top:1px}
 
   /* ---------- About ---------- */
-  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:52px;align-items:start}
-  .about-text p{color:var(--muted);margin-bottom:18px;font-size:1.03rem}
+  #about{background:var(--bg-alt);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)}
+  .about-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:46px;align-items:start}
+  .about-text p{color:var(--muted);margin-bottom:17px}
   .about-text strong{color:var(--text);font-weight:600}
-  .skills-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:30px}
-  .skills-card h3{font-size:1rem;margin-bottom:18px}
-  .skill-group{margin-bottom:22px}
-  .skill-group:last-child{margin-bottom:0}
-  .skill-group .label{font-family:var(--mono);font-size:.74rem;color:var(--accent);text-transform:uppercase;letter-spacing:.09em;margin-bottom:11px;display:block}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{font-size:.8rem;padding:5px 12px;border-radius:999px;background:rgba(34,211,238,.07);border:1px solid rgba(34,211,238,.18);color:#a5e8f5}
+  .term{background:var(--panel);border:1px solid var(--border);border-radius:13px;overflow:hidden}
+  .term .bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--border)}
+  .dot3{width:10px;height:10px;border-radius:50%}
+  .dot3.r{background:#ff5f57}.dot3.y{background:#febc2e}.dot3.g{background:#28c840}
+  .term .fname{margin-left:7px;font-family:var(--mono);font-size:.74rem;color:var(--dim)}
+  .term .body{padding:18px}
+  .term .label{font-family:var(--mono);font-size:.73rem;color:var(--accent);margin:0 0 9px;letter-spacing:.02em}
+  .term .label::before{content:'$ ';color:var(--dim)}
+  .term .skg{margin-bottom:17px}.term .skg:last-child{margin-bottom:0}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{font-family:var(--mono);font-size:.74rem;padding:4px 10px;border-radius:7px;background:var(--accent-soft);border:1px solid var(--accent-line);color:#9fe9df}
 
-  /* ---------- Featured project ---------- */
-  .featured{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:34px;margin-bottom:30px;transition:border-color .25s}
-  .featured:hover{border-color:rgba(34,211,238,.35)}
-  .featured .shot{border-radius:12px;border:1px solid var(--border);width:100%;display:block;background:#0c111a;aspect-ratio:16/10;object-fit:cover;object-position:top}
-  .featured .pill{display:inline-block;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:#0a0e14;background:var(--gradient);padding:4px 11px;border-radius:6px;margin-bottom:14px;font-weight:600}
-  .featured h3{font-size:1.5rem;letter-spacing:-.02em;margin-bottom:10px}
-  .featured > div p{color:var(--muted);font-size:.97rem;margin-bottom:14px}
-  .feat-list{list-style:none;margin:0 0 18px}
-  .feat-list li{color:var(--muted);font-size:.9rem;padding-left:22px;position:relative;margin-bottom:7px}
+  /* ---------- Work ---------- */
+  .featured{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:center;background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:28px;margin-bottom:24px;transition:border-color .25s}
+  .featured:hover{border-color:var(--accent-line)}
+  .featured .shot{width:100%;display:block;border-radius:11px;border:1px solid var(--border);background:#0c0f14;aspect-ratio:16/10;object-fit:cover;object-position:top}
+  .pill{display:inline-block;font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:#06201d;background:var(--accent);padding:4px 10px;border-radius:6px;margin-bottom:13px;font-weight:700}
+  .featured h3{font-family:var(--mono);font-size:1.32rem;letter-spacing:-.02em;margin-bottom:10px}
+  .featured>div p{color:var(--muted);font-size:.95rem;margin-bottom:13px}
+  .feat-list{list-style:none;margin:0 0 16px}
+  .feat-list li{color:var(--muted);font-size:.88rem;padding-left:20px;position:relative;margin-bottom:6px}
   .feat-list li::before{content:'▹';position:absolute;left:0;color:var(--accent)}
-  .featured .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .tag{font-family:var(--mono);font-size:.71rem;color:var(--muted);background:var(--panel-2);border:1px solid var(--border);padding:3px 9px;border-radius:6px}
 
-  /* ---------- Work grid ---------- */
-  .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
-  .work-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:transform .25s,border-color .25s,background .25s;display:flex;flex-direction:column}
-  .work-card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.4);background:var(--card-hover)}
-  .work-card .icon{font-size:1.5rem;margin-bottom:14px}
-  .work-card h3{font-size:1.08rem;margin-bottom:10px;letter-spacing:-.01em}
-  .work-card p{color:var(--muted);font-size:.91rem;flex:1}
-  .work-card .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:6px}
-  .tag{font-family:var(--mono);font-size:.71rem;color:var(--accent-2);background:rgba(129,140,248,.08);border:1px solid rgba(129,140,248,.2);padding:3px 9px;border-radius:5px}
-  .gh-link{margin-top:14px;font-size:.85rem;color:var(--accent);text-decoration:none;font-weight:600}
+  .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:24px;transition:transform .25s,border-color .25s,background .25s;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-4px);border-color:var(--accent-line);background:var(--panel-2)}
+  .card .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:13px}
+  .card .ic{font-size:1.35rem}
+  .card .repo{font-family:var(--mono);font-size:.7rem;color:var(--dim)}
+  .card h3{font-family:var(--mono);font-size:1.02rem;margin-bottom:9px;letter-spacing:-.01em}
+  .card p{color:var(--muted);font-size:.88rem;flex:1}
+  .card .tags{margin-top:15px;margin-bottom:0}
+  .gh-link{margin-top:13px;font-family:var(--mono);font-size:.8rem;color:var(--accent)}
   .gh-link:hover{text-decoration:underline}
-  .work-foot{margin-top:38px;text-align:center;color:var(--muted);font-size:.95rem}
-  .work-foot a{color:var(--accent);text-decoration:none;font-weight:600}
+  .work-foot{margin-top:34px;text-align:center;font-family:var(--mono);color:var(--muted);font-size:.86rem}
+  .work-foot a{color:var(--accent)}
 
-  /* ---------- Timeline ---------- */
-  .timeline{position:relative;padding-left:32px}
-  .timeline::before{content:'';position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent-2))}
-  .t-item{position:relative;margin-bottom:42px}
+  /* ---------- Experience ---------- */
+  #experience{background:var(--bg-alt);border-top:1px solid var(--border-soft);border-bottom:1px solid var(--border-soft)}
+  .timeline{position:relative;padding-left:30px}
+  .timeline::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--border)}
+  .t-item{position:relative;margin-bottom:38px}
   .t-item:last-child{margin-bottom:0}
-  .t-item::before{content:'';position:absolute;left:-32px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
-  .t-item .period{font-family:var(--mono);font-size:.79rem;color:var(--accent);margin-bottom:4px}
-  .t-item h3{font-size:1.13rem;letter-spacing:-.01em}
-  .t-item .org{color:var(--accent-2);font-weight:600;font-size:.94rem;margin-bottom:8px}
-  .t-item p{color:var(--muted);font-size:.92rem;max-width:760px}
-  .t-item ul{margin:10px 0 0 18px;color:var(--muted);font-size:.92rem;max-width:760px}
-  .t-item ul li{margin-bottom:6px}
+  .t-item::before{content:'';position:absolute;left:-30px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg-alt);border:2px solid var(--accent)}
+  .t-item .period{font-family:var(--mono);font-size:.76rem;color:var(--accent);margin-bottom:3px}
+  .t-item h3{font-family:var(--mono);font-size:1.05rem;letter-spacing:-.01em}
+  .t-item .org{color:var(--text);font-weight:600;font-size:.9rem;margin-bottom:7px}
+  .t-item .org span{color:var(--dim);font-weight:400;font-family:var(--mono);font-size:.82rem}
+  .t-item p{color:var(--muted);font-size:.9rem;max-width:720px}
+  .t-item ul{margin:8px 0 0 17px;color:var(--muted);font-size:.9rem;max-width:720px}
+  .t-item ul li{margin-bottom:5px}
 
   /* ---------- Education ---------- */
-  .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:20px}
-  .edu-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px}
-  .edu-card .icon{font-size:1.5rem;margin-bottom:12px}
-  .edu-card h3{font-size:1.04rem;margin-bottom:6px;letter-spacing:-.01em}
-  .edu-card p{color:var(--muted);font-size:.9rem}
+  .edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .edu-card{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:24px}
+  .edu-card .ic{font-size:1.35rem;margin-bottom:11px}
+  .edu-card h3{font-family:var(--mono);font-size:.98rem;margin-bottom:6px;letter-spacing:-.01em}
+  .edu-card p{color:var(--muted);font-size:.87rem}
 
   /* ---------- Contact ---------- */
-  .contact{text-align:center}
-  .contact p{color:var(--muted);max-width:540px;margin:0 auto 30px}
-  footer{border-top:1px solid var(--border);padding:30px 28px;text-align:center;color:var(--muted);font-size:.85rem}
-  footer a{color:var(--accent);text-decoration:none}
+  #contact{background:var(--bg-alt);border-top:1px solid var(--border-soft)}
+  .contact-box{text-align:center;max-width:620px;margin:0 auto}
+  .contact-box .prompt{justify-content:center}
+  .contact-box h2{font-family:var(--mono);font-size:clamp(1.5rem,4vw,2.1rem);font-weight:700;letter-spacing:-.02em;margin:6px 0 16px}
+  .contact-box p{color:var(--muted);margin-bottom:26px}
+  .contact-box .socials{justify-content:center}
+  footer{border-top:1px solid var(--border-soft);padding:26px;text-align:center;font-family:var(--mono);color:var(--dim);font-size:.78rem}
+  footer a{color:var(--accent)}
 
   /* ---------- Reveal ---------- */
-  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
   .reveal.visible{opacity:1;transform:none}
 
-  /* ---------- Responsive ---------- */
-  @media(max-width:900px){
-    .hero-grid{grid-template-columns:1fr;gap:44px}
-    .hero-visual{order:-1;max-width:440px}
-    .about-grid{grid-template-columns:1fr}
-    .featured{grid-template-columns:1fr;gap:26px}
+  @media(max-width:860px){
+    .about-grid{grid-template-columns:1fr;gap:30px}
+    .featured{grid-template-columns:1fr;gap:22px}
     .featured .shot-wrap{order:-1}
   }
-  @media(max-width:820px){
-    .nav-links{position:fixed;top:66px;right:0;background:var(--bg-alt);border:1px solid var(--border);border-radius:0 0 0 12px;flex-direction:column;gap:0;padding:8px 0;display:none;min-width:220px}
-    .nav-links.open{display:flex}
-    .nav-links a{padding:12px 26px;display:block}
+  @media(max-width:720px){
     .menu-btn{display:block}
-    .hero-stats{gap:30px}
-    section{padding:84px 0}
+    .nav-links{position:fixed;top:62px;right:0;background:var(--bg-alt);border:1px solid var(--border);border-radius:0 0 0 12px;flex-direction:column;gap:0;padding:6px;display:none;min-width:200px}
+    .nav-links.open{display:flex}
+    .nav-links a{display:block;padding:11px 14px}
+    section{padding:66px 0}
+    .hero-stats{gap:26px}
+    .sec-head h2{white-space:normal}
   }
 </style>
 </head>
@@ -172,82 +187,79 @@
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="#top">sandeep<span>.malik</span></a>
+    <a class="brand" href="#top">
+      <svg class="mono-av" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="24" fill="#13161c" stroke="#40dccb" stroke-width="3"/><text x="50" y="68" font-family="JetBrains Mono,monospace" font-size="46" font-weight="700" text-anchor="middle" fill="#40dccb">SM</text></svg>
+      sandeep<span style="color:var(--accent)">_malik</span>
+    </a>
     <button class="menu-btn" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#work">My Work</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about"><span class="hash">#</span>about</a></li>
+      <li><a href="#work"><span class="hash">#</span>work</a></li>
+      <li><a href="#experience"><span class="hash">#</span>experience</a></li>
+      <li><a href="#education"><span class="hash">#</span>education</a></li>
+      <li><a href="#contact"><span class="hash">#</span>contact</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">Hi, my name is</div>
-      <h1>Sandeep Malik.</h1>
-      <h2>I build <span class="grad">intelligent data &amp; AI systems</span> at scale.</h2>
-      <p class="lead">AI Engineer &amp; Data Architect specializing in LLMs, Retrieval-Augmented Generation, and vector databases — currently a Principal Engineer at Autodesk, based in Greater Montreal, Canada.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#work">View My Work</a>
-        <a class="btn btn-ghost" href="#contact">Get In Touch</a>
+  <div class="wrap">
+    <div class="hero-top">
+      <div class="avatar">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#40dccb"/><stop offset="1" stop-color="#818cf8"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="116" height="116" rx="22" fill="#11141a" stroke="url(#g)" stroke-width="2.5"/>
+          <text x="60" y="80" font-family="JetBrains Mono,monospace" font-size="52" font-weight="700" text-anchor="middle" fill="url(#g)">SM</text>
+        </svg>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><div class="num">11+</div><div class="lbl">Years of Experience</div></div>
-        <div class="stat"><div class="num">8+</div><div class="lbl">Companies, 3 Continents</div></div>
-        <div class="stat"><div class="num">LLM · RAG</div><div class="lbl">GenAI in Production</div></div>
+      <div>
+        <div class="prompt">~/sandeep $ whoami<span class="cursor"></span></div>
+        <h1>Sandeep Malik<span class="dot">.</span></h1>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="code-card">
-        <div class="bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="fname">pipeline.py</span></div>
-<pre><span class="c-key">from</span> rag <span class="c-key">import</span> Retriever, LLM
 
-<span class="c-key">class</span> <span class="c-fn">IntelligentSystem</span>:
-    <span class="c-key">def</span> <span class="c-fn">answer</span>(self, q: <span class="c-fn">str</span>):
-        ctx = self.vector_db.<span class="c-fn">search</span>(
-            <span class="c-fn">embed</span>(q), top_k=<span class="c-num">8</span>
-        )  <span class="c-com"># Pinecone</span>
-        <span class="c-key">return</span> self.llm.<span class="c-fn">generate</span>(
-            query=q, context=ctx
-        )
+    <div class="role"><b>AI Engineer</b> &amp; <b>Data Architect</b><span class="sep">//</span>LLMs · RAG · Vector Databases</div>
 
-<span class="c-com"># reliable + smart by design</span>
-system = <span class="c-fn">IntelligentSystem</span>()</pre>
-      </div>
-      <div class="float-badges">
-        <span class="fb">LLMs</span><span class="fb">RAG</span><span class="fb">Vector DBs</span><span class="fb">Data Platforms</span><span class="fb">LLM-Ops</span>
-      </div>
+    <div class="socials">
+      <a class="social" href="https://github.com/samsandeepmalik" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.8 1.3 2.6 1 .1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>GitHub</a>
+      <a class="social" href="https://www.linkedin.com/in/sandeep-malik-48a12a70/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5V8h3v11zM6.5 6.7a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zM19 19h-3v-5.6c0-1.3-.5-2.2-1.7-2.2-.9 0-1.4.6-1.7 1.2-.1.2-.1.5-.1.8V19h-3V8h3v1.5c.4-.6 1.1-1.5 2.7-1.5 2 0 3.5 1.3 3.5 4.1V19z"/></svg>LinkedIn</a>
+      <a class="social" href="mailto:samsandeepmalik@gmail.com"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg>samsandeepmalik@gmail.com</a>
+    </div>
+
+    <p class="lead">I turn data into intelligent products. Over a decade in data engineering — and today I ship <strong>generative AI in production</strong>: GPT-powered products, RAG pipelines, semantic index layers, and vector-database knowledge bases. Currently <strong>Principal Engineer at Autodesk</strong>, based in Greater Montreal, Canada.</p>
+
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#work">View my work →</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><div class="num">11+</div><div class="lbl">years experience</div></div>
+      <div class="stat"><div class="num">8+</div><div class="lbl">companies · 3 continents</div></div>
+      <div class="stat"><div class="num">LLM · RAG</div><div class="lbl">GenAI in production</div></div>
     </div>
   </div>
 </header>
 
 <section id="about">
   <div class="wrap">
-    <span class="section-tag">01. about</span>
-    <h2 class="section-title">Transforming Data into Intelligent Solutions</h2>
+    <div class="sec-head"><span class="idx">01</span><h2>about</h2><span class="rule"></span></div>
     <div class="about-grid">
       <div class="about-text reveal">
         <p>I'm an <strong>AI Engineer and Data Architect</strong> with over a decade of experience designing data platforms and, more recently, putting <strong>generative AI into production</strong> — GPT-powered products, RAG pipelines, semantic index layers, and vector-database knowledge bases.</p>
-        <p>My career spans the full arc of modern data engineering: from building enterprise Java systems in India and Dubai, through big-data platforms at <strong>CGI, Ericsson, and Intact</strong>, to advising customers as a <strong>Solutions Architect at Cloudera</strong>, leading the search product team at <strong>Sitecore</strong>, and architecting AI-driven data platforms at <strong>Databook</strong>. Today I'm a <strong>Principal Engineer at Autodesk</strong>.</p>
+        <p>My career spans the full arc of modern data engineering: from enterprise Java systems in India and Dubai, through big-data platforms at <strong>CGI, Ericsson, and Intact</strong>, to advising customers as a <strong>Solutions Architect at Cloudera</strong>, leading the search product team at <strong>Sitecore</strong>, and architecting AI-driven data platforms at <strong>Databook</strong>. Today I'm a <strong>Principal Engineer at Autodesk</strong>.</p>
         <p>I care about systems that are reliable as well as smart — data quality, observability, and LLM-Ops are as much a part of my toolkit as embeddings and prompts. I've also led and mentored teams of data engineers, because great platforms are built by great teams.</p>
       </div>
-      <aside class="skills-card reveal">
-        <h3>Core Toolkit</h3>
-        <div class="skill-group">
-          <span class="label">AI / GenAI</span>
-          <div class="chips"><span class="chip">LLMs</span><span class="chip">RAG Pipelines</span><span class="chip">Vector DBs · Pinecone</span><span class="chip">Semantic Search</span><span class="chip">LLM-Ops</span><span class="chip">Agentic AI</span></div>
-        </div>
-        <div class="skill-group">
-          <span class="label">Data Engineering</span>
-          <div class="chips"><span class="chip">Data Lakes &amp; Warehouses</span><span class="chip">Snowflake</span><span class="chip">Batch &amp; Streaming</span><span class="chip">Data Quality</span><span class="chip">Observability</span><span class="chip">Cloudera CDP</span></div>
-        </div>
-        <div class="skill-group">
-          <span class="label">Languages &amp; Cloud</span>
-          <div class="chips"><span class="chip">Python</span><span class="chip">Scala</span><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">AWS</span><span class="chip">Kubernetes</span></div>
+      <aside class="term reveal">
+        <div class="bar"><span class="dot3 r"></span><span class="dot3 y"></span><span class="dot3 g"></span><span class="fname">skills.sh</span></div>
+        <div class="body">
+          <div class="skg"><p class="label">ai_genai</p><div class="chips"><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">Pinecone</span><span class="chip">Semantic Search</span><span class="chip">LLM-Ops</span><span class="chip">Agentic AI</span></div></div>
+          <div class="skg"><p class="label">data_engineering</p><div class="chips"><span class="chip">Data Lakes</span><span class="chip">Snowflake</span><span class="chip">Batch + Streaming</span><span class="chip">Data Quality</span><span class="chip">Cloudera CDP</span></div></div>
+          <div class="skg"><p class="label">languages_cloud</p><div class="chips"><span class="chip">Python</span><span class="chip">Scala</span><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">AWS</span><span class="chip">Kubernetes</span></div></div>
         </div>
       </aside>
     </div>
@@ -256,8 +268,7 @@ system = <span class="c-fn">IntelligentSystem</span>()</pre>
 
 <section id="work">
   <div class="wrap">
-    <span class="section-tag">02. my work</span>
-    <h2 class="section-title">Selected Projects &amp; Highlights</h2>
+    <div class="sec-head"><span class="idx">02</span><h2>things I've built</h2><span class="rule"></span></div>
 
     <div class="featured reveal">
       <div>
@@ -266,12 +277,12 @@ system = <span class="c-fn">IntelligentSystem</span>()</pre>
         <p>Local-first income &amp; expense tracker driven by a Claude tool-calling agent — chat it, WhatsApp it, or snap a receipt. SQLite on your machine is the single source of truth; OCR and Google sync are opt-in.</p>
         <ul class="feat-list">
           <li>One agent, two channels — web chat and WhatsApp share the same service layer, zero duplicated logic.</li>
-          <li>Server-side tax back-calculation (GST/QST/HST) computed once and reused by REST, the agent, and live previews.</li>
+          <li>Server-side tax back-calculation (GST/QST/HST) reused by REST, the agent, and live previews.</li>
           <li>Idempotent one-way Google Sheets/Drive sync with crash-safe SQLite migrations.</li>
           <li>200+ backend tests, including an adversarial suite built to break reconciliation.</li>
         </ul>
         <div class="tags"><span class="tag">Python 3.13</span><span class="tag">React</span><span class="tag">Claude Agent</span><span class="tag">SQLite</span><span class="tag">OCR</span><span class="tag">Docker</span></div>
-        <a class="btn btn-primary" href="https://github.com/samsandeepmalik/agentic-expense-manager" target="_blank" rel="noopener" style="padding:10px 20px;font-size:.9rem">View on GitHub →</a>
+        <a class="btn btn-primary" href="https://github.com/samsandeepmalik/agentic-expense-manager" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
       <div class="shot-wrap">
         <img class="shot" src="https://raw.githubusercontent.com/samsandeepmalik/agentic-expense-manager/main/docs/images/dashboard.png" alt="Agentic Expense Manager dashboard" loading="lazy" onerror="this.closest('.featured').style.gridTemplateColumns='1fr';this.parentElement.style.display='none'">
@@ -279,61 +290,60 @@ system = <span class="c-fn">IntelligentSystem</span>()</pre>
     </div>
 
     <div class="work-grid">
-      <div class="work-card reveal">
-        <div class="icon">🤖</div>
-        <h3>GPT Solution for Strategic Sales</h3>
-        <p>Spearheaded a generative-AI product for strategic sales intelligence, enhancing customer engagement and sales strategy with LLM-driven insights.</p>
+      <div class="card reveal">
+        <div class="top"><span class="ic">🤖</span></div>
+        <h3>GPT Sales Intelligence</h3>
+        <p>Spearheaded a generative-AI product for strategic sales — enhancing customer engagement and sales strategy with LLM-driven insights.</p>
         <div class="tags"><span class="tag">GPT</span><span class="tag">GenAI</span><span class="tag">Product</span></div>
       </div>
-      <div class="work-card reveal">
-        <div class="icon">🔎</div>
-        <h3>RAG Pipelines &amp; Semantic Index</h3>
-        <p>Designed Retrieval-Augmented Generation pipelines and architected a semantic index layer, dramatically improving AI-driven information retrieval and analysis.</p>
-        <div class="tags"><span class="tag">RAG</span><span class="tag">Embeddings</span><span class="tag">Semantic Search</span></div>
+      <div class="card reveal">
+        <div class="top"><span class="ic">🔎</span></div>
+        <h3>RAG &amp; Semantic Index</h3>
+        <p>Designed Retrieval-Augmented Generation pipelines and a semantic index layer, dramatically improving AI-driven retrieval and analysis.</p>
+        <div class="tags"><span class="tag">RAG</span><span class="tag">Embeddings</span><span class="tag">Search</span></div>
       </div>
-      <div class="work-card reveal">
-        <div class="icon">🧠</div>
-        <h3>Vector Knowledge Base &amp; LLM-Ops</h3>
-        <p>Managed a Pinecone vector database as the knowledge base for AI applications and built LLM-Ops tooling to streamline model deployment and monitoring.</p>
+      <div class="card reveal">
+        <div class="top"><span class="ic">🧠</span></div>
+        <h3>Vector KB &amp; LLM-Ops</h3>
+        <p>Managed a Pinecone vector database as an AI knowledge base and built LLM-Ops tooling for model deployment and monitoring.</p>
         <div class="tags"><span class="tag">Pinecone</span><span class="tag">LLM-Ops</span><span class="tag">MLOps</span></div>
       </div>
-      <div class="work-card reveal">
-        <div class="icon">🛒</div>
-        <h3>AI-Backed Search &amp; Personalization</h3>
-        <p>Led Sitecore's core Search product team — enhancing AI search and personalization for global e-commerce customers and lifting conversion rates.</p>
+      <div class="card reveal">
+        <div class="top"><span class="ic">🛒</span></div>
+        <h3>AI Search &amp; Personalization</h3>
+        <p>Led Sitecore's core Search product team — AI-backed search and personalization for global e-commerce, lifting conversions.</p>
         <div class="tags"><span class="tag">Search</span><span class="tag">Personalization</span><span class="tag">Snowflake</span></div>
       </div>
-      <div class="work-card reveal">
-        <div class="icon">🏗️</div>
+      <div class="card reveal">
+        <div class="top"><span class="ic">🏗️</span></div>
         <h3>Enterprise Data Platforms</h3>
-        <p>Architected scalable Data Lake and Warehouse solutions for a global retailer, cutting storage costs, and led cloud migrations of historical data to AWS at Cloudera.</p>
-        <div class="tags"><span class="tag">Data Lake</span><span class="tag">AWS</span><span class="tag">Cloudera CDP</span></div>
+        <p>Architected scalable Data Lake &amp; Warehouse solutions for a global retailer and led historical data migrations to AWS at Cloudera.</p>
+        <div class="tags"><span class="tag">Data Lake</span><span class="tag">AWS</span><span class="tag">Cloudera</span></div>
       </div>
-      <div class="work-card reveal">
-        <div class="icon">⚙️</div>
-        <h3>EN-RuleEngine <span style="font-size:.75rem;color:var(--muted)">(open source)</span></h3>
-        <p>A Scala rule engine that validates live streaming and batch data against rules defined in YAML — data quality enforcement for pipelines.</p>
+      <div class="card reveal">
+        <div class="top"><span class="ic">⚙️</span><span class="repo">samsandeepmalik/EN-RuleEngine</span></div>
+        <h3>EN-RuleEngine</h3>
+        <p>A Scala rule engine that validates streaming and batch data against rules defined in YAML — data-quality enforcement for pipelines.</p>
         <div class="tags"><span class="tag">Scala</span><span class="tag">Streaming</span><span class="tag">Data Quality</span></div>
         <a class="gh-link" href="https://github.com/samsandeepmalik/EN-RuleEngine" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
     </div>
-    <p class="work-foot">More experiments and tooling on <a href="https://github.com/samsandeepmalik" target="_blank" rel="noopener">github.com/samsandeepmalik</a></p>
+    <p class="work-foot">$ git log --more → <a href="https://github.com/samsandeepmalik" target="_blank" rel="noopener">github.com/samsandeepmalik</a></p>
   </div>
 </section>
 
 <section id="experience">
   <div class="wrap">
-    <span class="section-tag">03. experience</span>
-    <h2 class="section-title">Where I've Worked</h2>
+    <div class="sec-head"><span class="idx">03</span><h2>experience</h2><span class="rule"></span></div>
     <div class="timeline">
       <div class="t-item reveal">
-        <div class="period">Jul 2025 — Present · Montreal, Canada</div>
+        <div class="period">Jul 2025 — Present · Montreal</div>
         <h3>Principal Engineer</h3>
         <div class="org">Autodesk</div>
         <p>Driving engineering excellence across data and AI initiatives as a principal individual contributor.</p>
       </div>
       <div class="t-item reveal">
-        <div class="period">Dec 2022 — Jul 2025 · Montreal, Canada</div>
+        <div class="period">Dec 2022 — Jul 2025 · Montreal</div>
         <h3>Data Architect / Staff Engineer</h3>
         <div class="org">Databook</div>
         <ul>
@@ -343,7 +353,7 @@ system = <span class="c-fn">IntelligentSystem</span>()</pre>
         </ul>
       </div>
       <div class="t-item reveal">
-        <div class="period">Mar 2022 — Dec 2022 · Montreal, Canada</div>
+        <div class="period">Mar 2022 — Dec 2022 · Montreal</div>
         <h3>Principal Data Engineer</h3>
         <div class="org">Sitecore</div>
         <ul>
@@ -352,7 +362,7 @@ system = <span class="c-fn">IntelligentSystem</span>()</pre>
         </ul>
       </div>
       <div class="t-item reveal">
-        <div class="period">May 2021 — Mar 2022 · Montreal, Canada</div>
+        <div class="period">May 2021 — Mar 2022 · Montreal</div>
         <h3>Solutions Architect</h3>
         <div class="org">Cloudera</div>
         <ul>
@@ -361,19 +371,19 @@ system = <span class="c-fn">IntelligentSystem</span>()</pre>
         </ul>
       </div>
       <div class="t-item reveal">
-        <div class="period">Apr 2020 — May 2021 · Toronto, Canada</div>
+        <div class="period">Apr 2020 — May 2021 · Toronto</div>
         <h3>Senior Data Engineer</h3>
         <div class="org">Intact</div>
         <p>Built and optimized large-scale batch data pipelines for one of Canada's largest insurers.</p>
       </div>
       <div class="t-item reveal">
-        <div class="period">Sep 2019 — Apr 2020 · Montreal, Canada</div>
+        <div class="period">Sep 2019 — Apr 2020 · Montreal</div>
         <h3>Senior Data Engineer</h3>
         <div class="org">Ericsson</div>
         <p>Data engineering for telecom-scale platforms and analytics workloads.</p>
       </div>
       <div class="t-item reveal">
-        <div class="period">Jul 2018 — Aug 2019 · Montreal, Canada</div>
+        <div class="period">Jul 2018 — Aug 2019 · Montreal</div>
         <h3>Senior Data Engineer</h3>
         <div class="org">CGI</div>
         <p>Delivered big-data engineering solutions for enterprise clients.</p>
@@ -381,7 +391,7 @@ system = <span class="c-fn">IntelligentSystem</span>()</pre>
       <div class="t-item reveal">
         <div class="period">2014 — 2018 · India &amp; Dubai</div>
         <h3>Software / Data Engineer</h3>
-        <div class="org">Synechron · Emirates · MothersonSumi Infotech (MIND)</div>
+        <div class="org">Synechron · Emirates · MothersonSumi Infotech <span>(MIND)</span></div>
         <p>Early career building enterprise systems — including onsite work for Emirates Airline in Dubai and core platforms (Master Data Management, KPI systems) with Java, Spring, and AngularJS.</p>
       </div>
     </div>
@@ -390,50 +400,51 @@ system = <span class="c-fn">IntelligentSystem</span>()</pre>
 
 <section id="education">
   <div class="wrap">
-    <span class="section-tag">04. education &amp; certifications</span>
-    <h2 class="section-title">Education &amp; Continuous Learning</h2>
+    <div class="sec-head"><span class="idx">04</span><h2>education &amp; certs</h2><span class="rule"></span></div>
     <div class="edu-grid">
       <div class="edu-card reveal">
-        <div class="icon">🎓</div>
+        <div class="ic">🎓</div>
         <h3>Manav Bharti University, Solan</h3>
         <p>Engineering — foundation in computer science and software engineering.</p>
       </div>
       <div class="edu-card reveal">
-        <div class="icon">📜</div>
+        <div class="ic">📜</div>
         <h3>Big Data &amp; Cloud Training</h3>
-        <p>Hands-on preparation across CCA-175 (Spark &amp; Hadoop), Certified Kubernetes Application Developer (CKAD), and AWS serverless workshops.</p>
+        <p>CCA-175 (Spark &amp; Hadoop), Certified Kubernetes Application Developer (CKAD), and AWS serverless workshops.</p>
       </div>
       <div class="edu-card reveal">
-        <div class="icon">🚀</div>
+        <div class="ic">🚀</div>
         <h3>Always Learning</h3>
-        <p>Currently deep in the GenAI stack — LLM orchestration, agentic patterns, retrieval architectures, and evaluation.</p>
+        <p>Deep in the GenAI stack — LLM orchestration, agentic patterns, retrieval architectures, and evaluation.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact">
   <div class="wrap">
-    <span class="section-tag">05. contact</span>
-    <h2 class="section-title">Let's Build Something Intelligent</h2>
-    <p class="reveal">I'm always open to conversations about AI engineering, data architecture, and interesting problems. The fastest way to reach me:</p>
-    <div class="hero-cta" style="justify-content:center">
-      <a class="btn btn-primary" href="mailto:samsandeepmalik@gmail.com">Say Hello</a>
-      <a class="btn btn-ghost" href="https://www.linkedin.com/in/sandeep-malik-48a12a70/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn btn-ghost" href="https://github.com/samsandeepmalik" target="_blank" rel="noopener">GitHub</a>
+    <div class="contact-box">
+      <div class="prompt">~/sandeep $ ./say-hello.sh<span class="cursor"></span></div>
+      <h2>Let's build something intelligent</h2>
+      <p>I'm always open to conversations about AI engineering, data architecture, and interesting problems.</p>
+      <div class="socials">
+        <a class="social" href="mailto:samsandeepmalik@gmail.com"><svg viewBox="0 0 24 24"><path d="M2 4h20v16H2V4zm10 7L4 6v1l8 5 8-5V6l-8 5z"/></svg>Email</a>
+        <a class="social" href="https://www.linkedin.com/in/sandeep-malik-48a12a70/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5V8h3v11zM6.5 6.7a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6zM19 19h-3v-5.6c0-1.3-.5-2.2-1.7-2.2-.9 0-1.4.6-1.7 1.2-.1.2-.1.5-.1.8V19h-3V8h3v1.5c.4-.6 1.1-1.5 2.7-1.5 2 0 3.5 1.3 3.5 4.1V19z"/></svg>LinkedIn</a>
+        <a class="social" href="https://github.com/samsandeepmalik" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 .1.8 1.3 2.6 1 .1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>GitHub</a>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  © <span id="yr"></span> Sandeep Malik · Built with care, hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+  <span style="color:var(--dim)">$</span> © <span id="yr"></span> Sandeep Malik · built &amp; deployed on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
 </footer>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
   document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').classList.remove('open')));
-  const io = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{ if(e.isIntersecting || e.boundingClientRect.top < 0){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting || e.boundingClientRect.top < 0){ e.target.classList.add('visible'); io.unobserve(e.target);} });
   },{threshold:.05,rootMargin:'0px 0px -20px 0px'});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
