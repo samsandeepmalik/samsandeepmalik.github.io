@@ -64,6 +64,10 @@
   .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
   h1{font-family:var(--mono);font-weight:700;font-size:clamp(2.3rem,5.6vw,3.5rem);line-height:1.06;letter-spacing:-.03em}
   h1 .hl{color:var(--accent)}
+  .hero-id{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+  .avatar{width:64px;height:64px;border-radius:15px;object-fit:cover;object-position:50% 20%;border:2px solid var(--accent);flex:none}
+  .avatar.mono{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:1.3rem;color:var(--accent);background:var(--paper)}
+  .hero-id .tag{margin-bottom:0}
   .role{margin-top:14px;font-family:var(--mono);color:var(--ink-2);font-size:1.02rem}
   .lead{max-width:520px;color:var(--muted);margin-top:20px;font-size:1.04rem}
   .lead strong{color:var(--ink-2);font-weight:600}
@@ -208,17 +212,22 @@
 <header class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <div class="tag"><span class="dot"></span>Open to new roles</div>
-      <h1>I build <span class="hl">intelligent</span> data &amp; AI systems.</h1>
-      <div class="role">AI Engineer &amp; Data Architect · Principal Engineer @ Autodesk</div>
-      <p class="lead">A decade in data engineering, now shipping <strong>generative AI in production</strong> — GPT-powered products, RAG pipelines, and vector-database knowledge bases. Based in Greater Montreal.</p>
+      <div class="hero-id">
+        <img class="avatar" src="headshot.jpg" alt="Sandeep Malik" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'avatar mono',textContent:'SM'}))">
+        <div class="tag"><span class="dot"></span>Open to new roles</div>
+      </div>
+      <h1>I build <span class="hl">agentic</span> AI systems, end&nbsp;to&nbsp;end.</h1>
+      <div class="role">Principal Engineer &amp; Tech Lead · Agentic AI @ Autodesk</div>
+      <p class="lead">13+ years across data &amp; AI — now <strong>leading agentic-AI platform engineering</strong> at Autodesk: shipping production agents, MCP tools, and the discovery &amp; orchestration layers that govern them. Hands-on builder, deep in RAG and data architecture. Greater Montreal.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#work">View my work →</a>
+        <a class="btn btn-ghost" href="cv.pdf" download>↓ Download CV</a>
         <a class="btn btn-ghost" href="#contact">Get in touch</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><div class="num">11+</div><div class="lbl">years experience</div></div>
-        <div class="stat"><div class="num">8+</div><div class="lbl">companies · 3 continents</div></div>
+        <div class="stat"><div class="num">13+</div><div class="lbl">years experience</div></div>
+        <div class="stat"><div class="num">11</div><div class="lbl">companies</div></div>
+        <div class="stat"><div class="num">2</div><div class="lbl">continents</div></div>
       </div>
     </div>
     <div class="term" aria-hidden="true">
@@ -233,16 +242,17 @@
     <div class="sec-head"><span class="pmt">$</span><h2>cat about.md</h2><span class="cmt"># 01</span></div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I'm an <strong>AI Engineer and Data Architect</strong> with over a decade of experience designing data platforms and, more recently, putting <strong>generative AI into production</strong> — GPT-powered products, RAG pipelines, semantic index layers, and vector-database knowledge bases.</p>
-        <p>My career spans the full arc of modern data engineering: from enterprise Java systems in India and Dubai, through big-data platforms at <strong>CGI, Ericsson, and Intact</strong>, to advising customers as a <strong>Solutions Architect at Cloudera</strong>, leading the search product team at <strong>Sitecore</strong>, and architecting AI-driven data platforms at <strong>Databook</strong>. Today I'm a <strong>Principal Engineer at Autodesk</strong>.</p>
-        <p>I care about systems that are reliable as well as smart — data quality, observability, and LLM-Ops are as much a part of my toolkit as embeddings and prompts. I've also led and mentored teams of data engineers, because great platforms are built by great teams.</p>
+        <p>I'm an <strong>AI Engineer and Data Architect</strong> with <strong>13+ years</strong> across 11 companies and 2 continents. Today I lead a central team at <strong>Autodesk</strong> building an <strong>agentic-AI platform</strong> — a BYO-agent / BYO-MCP model with its own discovery, orchestration, and standards layers — and I've shipped <strong>3 production agents, 5 MCPs, and 2 IDE plugins</strong> used across the company.</p>
+        <p>I'm a hands-on builder. I love taking ideas from MVP and POC to production-grade systems — agents, MCP tools, and RAG — on top of a decade of <strong>data-platform and big-data architecture</strong>. Along the way I've handled <strong>~2 PB</strong> of data and <strong>~200K events/sec</strong>, built <strong>Databook's first semantic layer</strong> from scratch, and architected platforms at <strong>Cloudera, Sitecore, Intact, Ericsson, and CGI</strong>.</p>
+        <p>I care about systems that are reliable as well as smart — data integrity, observability, and evals matter as much as embeddings and prompts. I've led teams of engineers, because great platforms are built by great teams.</p>
       </div>
       <aside class="filecard reveal">
         <div class="bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="nm">skills.sh</span></div>
         <div class="bd">
-          <div class="skg"><span class="l">ai_genai</span><div class="chips"><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">Pinecone</span><span class="chip">Semantic Search</span><span class="chip">LLM-Ops</span><span class="chip">Agentic AI</span></div></div>
-          <div class="skg"><span class="l">data_engineering</span><div class="chips"><span class="chip">Data Lakes</span><span class="chip">Snowflake</span><span class="chip">Batch + Streaming</span><span class="chip">Cloudera CDP</span></div></div>
-          <div class="skg"><span class="l">languages_cloud</span><div class="chips"><span class="chip">Python</span><span class="chip">Scala</span><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">AWS</span><span class="chip">Kubernetes</span></div></div>
+          <div class="skg"><span class="l">agentic_ai</span><div class="chips"><span class="chip">Harness Engineering</span><span class="chip">Agents &amp; MCP</span><span class="chip">Orchestration</span><span class="chip">Multi-Agent</span><span class="chip">ReAct</span><span class="chip">Plan-and-Execute</span><span class="chip">LangGraph</span></div></div>
+          <div class="skg"><span class="l">genai_rag</span><div class="chips"><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">Reranking</span><span class="chip">LLM-as-Judge</span><span class="chip">Evals</span><span class="chip">Pinecone</span><span class="chip">Azure OpenAI</span><span class="chip">Bedrock</span></div></div>
+          <div class="skg"><span class="l">data_and_cloud</span><div class="chips"><span class="chip">Snowflake</span><span class="chip">Databricks</span><span class="chip">Spark</span><span class="chip">Kafka</span><span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">Kubernetes</span></div></div>
+          <div class="skg"><span class="l">languages</span><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Java</span><span class="chip">Scala</span><span class="chip">Node.js</span></div></div>
         </div>
       </aside>
     </div>
@@ -273,11 +283,11 @@
     </div>
 
     <div class="work-grid">
-      <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">gpt-sales.md</span></div><div class="cbd"><h3>GPT Sales Intelligence</h3><p>Spearheaded a generative-AI product for strategic sales — enhancing customer engagement with LLM-driven insights.</p><div class="tags"><span class="tagx">GPT</span><span class="tagx">GenAI</span></div></div></div>
-      <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">rag-index.md</span></div><div class="cbd"><h3>RAG &amp; Semantic Index</h3><p>Designed Retrieval-Augmented Generation pipelines and a semantic index layer, improving AI-driven retrieval.</p><div class="tags"><span class="tagx">RAG</span><span class="tagx">Embeddings</span></div></div></div>
-      <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">vector-kb.md</span></div><div class="cbd"><h3>Vector KB &amp; LLM-Ops</h3><p>Managed a Pinecone vector database as an AI knowledge base and built LLM-Ops tooling for deployment.</p><div class="tags"><span class="tagx">Pinecone</span><span class="tagx">LLM-Ops</span></div></div></div>
-      <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">ai-search.md</span></div><div class="cbd"><h3>AI Search &amp; Personalization</h3><p>Led Sitecore's core Search team — AI-backed search and personalization for global e-commerce.</p><div class="tags"><span class="tagx">Search</span><span class="tagx">Snowflake</span></div></div></div>
-      <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">data-platforms.md</span></div><div class="cbd"><h3>Enterprise Data Platforms</h3><p>Architected Data Lake &amp; Warehouse for a global retailer and led historical migrations to AWS at Cloudera.</p><div class="tags"><span class="tagx">Data Lake</span><span class="tagx">AWS</span></div></div></div>
+      <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">agentic-platform.md</span></div><div class="cbd"><h3>Agentic Platform · Autodesk</h3><p>Leading a BYO-agent/MCP platform — agent &amp; MCP catalog, discovery, orchestration, and worker standards. Shipped 3 agents, 5 MCPs &amp; 2 IDE plugins used across Autodesk.</p><div class="tags"><span class="tagx">Agents</span><span class="tagx">MCP</span><span class="tagx">Orchestration</span></div></div></div>
+      <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">shift-left-security.md</span></div><div class="cbd"><h3>Shift-Left Security Agents</h3><p>MCP tools + proactive remediation agents that surface secure-coding standards inside AI IDEs (Cursor, Claude Code) and auto-raise fix PRs for repo vulnerabilities.</p><div class="tags"><span class="tagx">GitHub App</span><span class="tagx">Observability</span></div></div></div>
+      <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">databook-semantic-layer.md</span></div><div class="cbd"><h3>Data Platform &amp; Semantic Layer</h3><p>Built Databook's data platform from scratch and its first semantic layer (early 2023) powering Databook AI — with agentic workflows in LangGraph &amp; Google ADK.</p><div class="tags"><span class="tagx">LangGraph</span><span class="tagx">Semantic Layer</span></div></div></div>
+      <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">gpt-sales-rag.md</span></div><div class="cbd"><h3>GPT Sales Product · Advanced RAG</h3><p>A GPT product for strategic sales with multi-query &amp; step-back retrieval, reranking, and LLM-as-judge to cut hallucinations and lift engagement.</p><div class="tags"><span class="tagx">RAG</span><span class="tagx">Pinecone</span></div></div></div>
+      <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">search-at-scale.md</span></div><div class="cbd"><h3>Search at Scale · Sitecore</h3><p>Led the core Search team handling <strong>~200K events/sec</strong>; architected a Data Lake/Warehouse for a global retailer, cutting storage costs.</p><div class="tags"><span class="tagx">Elasticsearch</span><span class="tagx">Kafka</span><span class="tagx">Snowflake</span></div></div></div>
       <div class="card reveal"><div class="cbar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="fn">EN-RuleEngine</span></div><div class="cbd"><h3>EN-RuleEngine</h3><p>A Scala rule engine that validates streaming and batch data against rules defined in YAML.</p><div class="tags"><span class="tagx">Scala</span><span class="tagx">Streaming</span></div><a class="gh-link" href="https://github.com/samsandeepmalik/EN-RuleEngine" target="_blank" rel="noopener">View on GitHub →</a></div></div>
     </div>
     <p class="work-foot">$ git remote → <a href="https://github.com/samsandeepmalik" target="_blank" rel="noopener">github.com/samsandeepmalik</a></p>
@@ -288,14 +298,14 @@
   <div class="wrap">
     <div class="sec-head"><span class="pmt">$</span><h2>git log --author=sandeep</h2><span class="cmt"># 03</span></div>
     <div class="timeline">
-      <div class="t-item reveal"><div class="period">Jul 2025 — Present · Montreal</div><h3>Principal Engineer</h3><div class="org">Autodesk</div><p>Driving engineering excellence across data and AI initiatives as a principal individual contributor.</p></div>
-      <div class="t-item reveal"><div class="period">Dec 2022 — Jul 2025 · Montreal</div><h3>Data Architect / Staff Engineer</h3><div class="org">Databook</div><ul><li>Spearheaded a GPT solution for strategic sales products and designed production RAG pipelines.</li><li>Architected a semantic index layer and managed Pinecone as the AI knowledge base.</li><li>Built LLM-Ops, data-quality checks, and observability; led a team of data engineers on a new platform.</li></ul></div>
-      <div class="t-item reveal"><div class="period">Mar 2022 — Dec 2022 · Montreal</div><h3>Principal Data Engineer</h3><div class="org">Sitecore</div><ul><li>Led the core Search product team — AI-backed search and personalization for e-commerce.</li><li>Architected Data Lake/Warehouse for a global retailer; built Snowflake marts and automated monitoring.</li></ul></div>
-      <div class="t-item reveal"><div class="period">May 2021 — Mar 2022 · Montreal</div><h3>Solutions Architect</h3><div class="org">Cloudera</div><ul><li>Guided customers onto Cloudera Data Platform across public, private, and hybrid clouds.</li><li>Designed on-prem → AWS migration strategies, ran POCs, and trained customer engineering teams.</li></ul></div>
-      <div class="t-item reveal"><div class="period">Apr 2020 — May 2021 · Toronto</div><h3>Senior Data Engineer</h3><div class="org">Intact</div><p>Built and optimized large-scale batch data pipelines for one of Canada's largest insurers.</p></div>
-      <div class="t-item reveal"><div class="period">Sep 2019 — Apr 2020 · Montreal</div><h3>Senior Data Engineer</h3><div class="org">Ericsson</div><p>Data engineering for telecom-scale platforms and analytics workloads.</p></div>
-      <div class="t-item reveal"><div class="period">Jul 2018 — Aug 2019 · Montreal</div><h3>Senior Data Engineer</h3><div class="org">CGI</div><p>Delivered big-data engineering solutions for enterprise clients.</p></div>
-      <div class="t-item reveal"><div class="period">2014 — 2018 · India &amp; Dubai</div><h3>Software / Data Engineer</h3><div class="org">Synechron · Emirates · MothersonSumi Infotech <span>(MIND)</span></div><p>Early career building enterprise systems — including onsite work for Emirates Airline in Dubai and core platforms (Master Data Management, KPI systems) with Java, Spring, and AngularJS.</p></div>
+      <div class="t-item reveal"><div class="period">Jul 2025 — Present · Montreal</div><h3>Principal Software Engineer / Tech Lead</h3><div class="org">Autodesk <span>· Trust AI Engineering</span></div><ul><li>Lead a central team building an <strong>agentic platform</strong> (BYO-agent/MCP) — the agent &amp; MCP catalog, discovery and orchestration layers, and the <strong>harness/standards</strong> for building workers.</li><li>Shipped 3 production agents (1 proactive, 2 reactive), 5 MCPs, and 2 IDE plugins used across Autodesk.</li><li>Shift security <strong>left</strong>: MCP tools surface secure-coding standards inside AI IDEs (Cursor, Claude Code); remediation agents auto-detect repo vulnerabilities and raise fix PRs.</li></ul></div>
+      <div class="t-item reveal"><div class="period">Dec 2022 — Jul 2025 · Montreal</div><h3>Data Architect / Staff Engineer</h3><div class="org">Databook</div><ul><li>Built the data platform from scratch and its <strong>first semantic layer (early 2023)</strong> powering Databook AI.</li><li>Spearheaded a GPT sales product with advanced RAG (multi-query, step-back, reranking, LLM-as-judge) and agentic workflows in LangGraph &amp; Google ADK.</li><li>Semantic index over Pinecone &amp; Elasticsearch on Snowflake/Databricks; led a team of data engineers.</li></ul></div>
+      <div class="t-item reveal"><div class="period">Mar 2022 — Dec 2022 · Montreal</div><h3>Big Data Architect / Data Engineer</h3><div class="org">Sitecore</div><ul><li>Led the core Search team handling <strong>~200K events/sec</strong> — AI-backed search and personalization for e-commerce.</li><li>Architected a Data Lake/Warehouse for a global retailer, reducing storage costs; built Snowflake marts and automated monitoring.</li></ul></div>
+      <div class="t-item reveal"><div class="period">May 2021 — Mar 2022 · Montreal</div><h3>Solution Architect</h3><div class="org">Cloudera</div><ul><li>Professional Services expert onboarding customers to Cloudera Data Platform (public/private/hybrid).</li><li>Designed on-prem → AWS migrations, ran POCs, and trained customer engineering teams.</li></ul></div>
+      <div class="t-item reveal"><div class="period">Apr 2020 — Apr 2021 · Montreal</div><h3>Software Development Specialist</h3><div class="org">Intact Insurance</div><p>Led a team of data engineers; built on-prem → AWS historical-data migration, refactored pipelines onto Databricks, and authored Snowflake/Databricks/AWS best-practice guides.</p></div>
+      <div class="t-item reveal"><div class="period">Sep 2019 — Mar 2020 · Montreal</div><h3>Data Engineer</h3><div class="org">Ericsson</div><p>5G network optimization with data scientists — a unified Jupyter + Spark + Airflow + Kubeflow platform on Kubernetes (Azure).</p></div>
+      <div class="t-item reveal"><div class="period">Jul 2018 — Aug 2019 · Montreal</div><h3>Data Engineer</h3><div class="org">CGI</div><p>Real-time prediction and rule engine for a market trade-settlement data pipeline.</p></div>
+      <div class="t-item reveal"><div class="period">2012 — 2018 · India &amp; Dubai</div><h3>Data / Software Engineer</h3><div class="org">Synechron · Interglobe (Dubai) · MothersonSumi (MIND) · NIIT</div><p>Early career: batch + real-time big-data pipelines over <strong>~2 PB</strong> (Dubai, onsite Emirates), an in-memory data fabric on Apache Ignite/Spark, enterprise KPI systems, and an enterprise training platform.</p></div>
     </div>
   </div>
 </section>
@@ -304,9 +314,9 @@
   <div class="wrap">
     <div class="sec-head"><span class="pmt">$</span><h2>cat education.txt</h2><span class="cmt"># 04</span></div>
     <div class="edu-grid">
-      <div class="edu-card reveal"><div class="l">university</div><h3>Manav Bharti University, Solan</h3><p>Engineering — foundation in computer science and software engineering.</p></div>
-      <div class="edu-card reveal"><div class="l">certifications</div><h3>Big Data &amp; Cloud</h3><p>CCA-175 (Spark &amp; Hadoop), Certified Kubernetes Application Developer (CKAD), and AWS serverless workshops.</p></div>
-      <div class="edu-card reveal"><div class="l">ongoing</div><h3>Always Learning</h3><p>Deep in the GenAI stack — LLM orchestration, agentic patterns, retrieval architectures, and evaluation.</p></div>
+      <div class="edu-card reveal"><div class="l">degree</div><h3>M.Sc. Computer Science</h3><p>Master of Science in Computer Science — Manav Bharti University (2013).</p></div>
+      <div class="edu-card reveal"><div class="l">certifications</div><h3>Cloud &amp; Data</h3><p>Snowflake SnowPro Core · AWS Solutions Architect – Associate · AWS Cloud Practitioner · Databricks Spark 3.0 · CCA-175 · Microsoft AZ-900.</p></div>
+      <div class="edu-card reveal"><div class="l">focus</div><h3>Harness &amp; Agentic Engineering</h3><p>Building the harness around LLMs — agent runtimes, MCP, orchestration, evals, and guardrails for production-grade agentic systems.</p></div>
     </div>
   </div>
 </section>
@@ -342,11 +352,11 @@
   const scr=document.getElementById('scr');
   const seq=[
     {t:'cmd',p:'sandeep@portfolio',a:'~',c:'whoami'},
-    {t:'out',v:'Sandeep Malik — AI Engineer & Data Architect'},
+    {t:'out',v:'Sandeep Malik — Principal AI Engineer & Tech Lead'},
     {t:'cmd',p:'sandeep@portfolio',a:'~',c:'cat stack.txt'},
-    {t:'out',v:'LLMs · RAG · Vector DBs · Data Platforms'},
+    {t:'out',v:'Agentic AI · Harness Engineering · MCP · RAG'},
     {t:'cmd',p:'sandeep@portfolio',a:'~',c:'./status --open-to-work'},
-    {t:'ok',v:'✓ Open to Principal / Staff / Lead roles'}
+    {t:'ok',v:'✓ Open to Principal / Staff · Agentic AI'}
   ];
   function el(cls,html){const s=document.createElement('span');s.className=cls;s.innerHTML=html;return s;}
   let li=0;
