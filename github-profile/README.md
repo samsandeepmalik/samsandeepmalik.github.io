@@ -15,14 +15,15 @@ Status: ✓ Open to Principal / Staff / Architect roles
 
 ---
 
-I design and build enterprise AI systems — from retrieval and agent workflows to the runtimes and platform capabilities that make them reliable. 14+ years across AI, data, and distributed systems. At Autodesk I lead a shared agent platform: **3 production agents, 5 MCPs, 2 IDE plugins**, and an **API modernization agent spanning 1,500+ applications** (>85% success by code complexity).
+I design and build enterprise AI systems — from retrieval and agent workflows to the runtimes and platform capabilities that make them reliable. 14+ years across AI, data, and distributed systems. At Autodesk I lead a shared agent platform: **3 production agents, 5 MCPs, 2 IDE plugins**, and a **modernization agent that migrated 1,500+ applications** to GraphQL (>85% success by code complexity) — an agentic workflow under deterministic control.
 
 ```sh
 $ cat focus.md
 ```
 
-- 🔭 **Currently** — Principal Software Engineer & Tech Lead at **Autodesk** (Trust AI Engineering), building a BYO-agent / BYO-MCP platform.
-- 🧠 **Focus** — agent harnesses & runtimes, MCP interoperability, secure RAG, evals and observability.
+- 🔭 **Currently** — Principal Software Engineer & Tech Lead at **Autodesk** (Trust AI Engineering), building the platform other teams use to create and run AI agents.
+- 🧠 **Focus** — agent harnesses & runtimes, MCP interoperability, secure RAG, and agent monitoring (evals for quality, Dynatrace APM for runtime); working closely with our Distinguished Architect on platform design.
+- 🧭 **Team practice** — coaching engineers on AI-assisted development (tactical vs. strategic programming) and a skills-and-agents plugin that standardizes our agentic SDLC: intent → design → plan → ADRs → specs → implementation loop → docs.
 - 🛠️ **I care about** — systems that are reliable *and* smart: data quality, observability, tested code.
 - 🌱 **Always learning** — the evolving GenAI stack: orchestration, evaluation, agents.
 - 📫 **Reach me** — [samsandeepmalik@gmail.com](mailto:samsandeepmalik@gmail.com)
